@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background Colors */
+    --color-background: #FAFAFA; /* gray-50 */
+    --color-foreground: #262626; /* gray-800 */
+    
+    /* Surface Colors */
+    --color-card: #FFFFFF; /* white */
+    --color-card-foreground: #262626; /* gray-800 */
+    --color-popover: #FFFFFF; /* white */
+    --color-popover-foreground: #262626; /* gray-800 */
+    
+    /* Primary Colors */
+    --color-primary: #000000; /* black */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #262626; /* gray-800 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #0095F6; /* blue-500 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Muted Colors */
+    --color-muted: #FAFAFA; /* gray-50 */
+    --color-muted-foreground: #8E8E8E; /* gray-500 */
+    
+    /* Destructive/Error Colors */
+    --color-destructive: #ED4956; /* red-500 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    --color-error: #ED4956; /* red-500 */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    /* Success Colors */
+    --color-success: #00D95F; /* green-500 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #FFD60A; /* yellow-500 */
+    --color-warning-foreground: #262626; /* gray-800 */
+    
+    /* Border & Input Colors */
+    --color-border: #DBDBDB; /* gray-300 */
+    --color-input: #DBDBDB; /* gray-300 */
+    --color-ring: #0095F6; /* blue-500 */
+    
+    /* Radius */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Background Colors */
+    --color-background: #000000; /* black */
+    --color-foreground: #FFFFFF; /* white */
+    
+    /* Surface Colors */
+    --color-card: #262626; /* gray-800 */
+    --color-card-foreground: #FFFFFF; /* white */
+    --color-popover: #262626; /* gray-800 */
+    --color-popover-foreground: #FFFFFF; /* white */
+    
+    /* Primary Colors */
+    --color-primary: #FFFFFF; /* white */
+    --color-primary-foreground: #000000; /* black */
+    
+    /* Secondary Colors */
+    --color-secondary: #262626; /* gray-800 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #0095F6; /* blue-500 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Muted Colors */
+    --color-muted: #262626; /* gray-800 */
+    --color-muted-foreground: #8E8E8E; /* gray-500 */
+    
+    /* Destructive/Error Colors */
+    --color-destructive: #ED4956; /* red-500 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    --color-error: #ED4956; /* red-500 */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    /* Success Colors */
+    --color-success: #00D95F; /* green-500 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #FFD60A; /* yellow-500 */
+    --color-warning-foreground: #000000; /* black */
+    
+    /* Border & Input Colors */
+    --color-border: #262626; /* gray-800 */
+    --color-input: #262626; /* gray-800 */
+    --color-ring: #0095F6; /* blue-500 */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  /* Haptic Feedback Simulation */
+  .haptic-feedback {
+    @apply transition-transform duration-100 ease-out active:scale-95;
+  }
+  
+  /* Gesture Anticipatory Zones */
+  .gesture-zone {
+    @apply transition-opacity duration-150;
+  }
+  
+  /* Micro-Interaction Feedback */
+  .micro-interaction {
+    @apply transition-transform duration-200 ease-out active:scale-95;
+  }
+  
+  /* Momentum-Based Transitions */
+  .momentum-transition {
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  /* Smart Overlay Gradients */
+  .overlay-gradient-dark {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%);
+  }
+  
+  .overlay-gradient-light {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.4) 100%);
+  }
+  
+  /* Shimmer Effect for Loading States */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  .shimmer {
+    animation: shimmer 2s linear infinite;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 1000px 100%;
+  }
+  
+  .dark .shimmer {
+    background: linear-gradient(90deg, #262626 25%, #1a1a1a 50%, #262626 75%);
+    background-size: 1000px 100%;
+  }
+  
+  /* Instagram-style shadows */
+  .shadow-instagram {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  }
+  
+  .shadow-instagram-lg {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Animation utilities */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  .animate-slideUp {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-slideDown {
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .animate-scaleIn {
+    animation: scaleIn 0.2s ease-out;
+  }
+}
